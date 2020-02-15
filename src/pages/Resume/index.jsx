@@ -4,11 +4,9 @@ import styles from './style.module.scss'
 
 import { Switch, Route, HashRouter as Router } from 'react-router-dom'
 
-import CareerPage from '../Career'
-import IntroducePage from '../Introduce'
-import TechPage from '../Tech'
-
 import Sidebar from '../../components/Sidebar'
+
+import { Sidebar as SidebarData } from '../../DB'
 
 const Resume = () => {
   return (
@@ -18,11 +16,7 @@ const Resume = () => {
           <Sidebar />
         </aside>
         <aside className={styles.rightSide}>
-          <Switch>
-            <Route path='/tech' component={TechPage} />
-            <Route path='/career' component={CareerPage} />
-            <Route path='/' component={IntroducePage} />
-          </Switch>
+          <Switch>{SidebarData.contents.map((data) => <Route path={data.path} component={data.component} />)}</Switch>
         </aside>
       </Router>
     </div>
