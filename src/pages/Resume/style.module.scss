@@ -1,0 +1,24 @@
+.resume {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.leftSide {
+  width: 240px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(73, 78, 95);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.rightSide {
+  width: calc(100% - 240px);
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(49, 55, 68);
+  padding: 24px;
+  overflow-y: auto;
+}
