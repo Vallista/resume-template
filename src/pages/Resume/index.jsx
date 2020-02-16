@@ -8,6 +8,8 @@ import Sidebar from '../../components/Sidebar'
 
 import { Sidebar as SidebarData } from '../../DB'
 
+const sidebarDataReverse = SidebarData.contents.slice().reverse()
+
 const Resume = () => {
   return (
     <div className={styles.resume}>
@@ -16,7 +18,7 @@ const Resume = () => {
           <Sidebar />
         </aside>
         <aside className={styles.rightSide}>
-          <Switch>{SidebarData.contents.map((data) => <Route path={data.path} component={data.component} />)}</Switch>
+          <Switch>{sidebarDataReverse.map((data) => <Route path={data.path} component={data.component} />)}</Switch>
         </aside>
       </Router>
     </div>
